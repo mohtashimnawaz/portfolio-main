@@ -10,13 +10,13 @@ interface ResumeDownloadProps {
 
 export default function ResumeDownload({ variant = 'primary', className = '' }: ResumeDownloadProps) {
   const handleDownload = () => {
-    // Replace with your actual resume file path
-    const resumeUrl = '/resume/mohtashim-nawaz-resume.pdf';
+    // Updated to use the correct CV file name
+    const resumeUrl = '/resume/Mohtashim Nawaz CV-4.pdf';
     
     // Create a temporary link element
     const link = document.createElement('a');
     link.href = resumeUrl;
-    link.download = 'Mohtashim_Nawaz_Resume.pdf'; // Name of the downloaded file
+    link.download = 'Mohtashim_Nawaz_CV.pdf'; // Name of the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
