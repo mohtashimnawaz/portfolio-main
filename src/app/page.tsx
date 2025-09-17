@@ -10,6 +10,7 @@ import TestimonialCarousel from '@/components/testimonials/TestimonialCarousel';
 import BlogSection from '@/components/blog/BlogSection';
 import SkillsVisualization from '@/components/skills/SkillsVisualization';
 import ResumeDownload from '@/components/layout/ResumeDownload';
+import ContactForm from '@/components/contact/ContactForm';
 
 // Sample data - replace with your actual data
 const projects = [
@@ -448,6 +449,11 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
             
+            {/* Contact Form */}
+            <div className="mb-12">
+              <ContactForm />
+            </div>
+            
             {/* Social Links */}
             <div className="flex justify-center gap-8 mb-12">
               <a 
@@ -473,10 +479,6 @@ export default function Home() {
                 <span>LinkedIn</span>
               </a>
               <ResumeDownload variant="primary" />
-            </div>
-
-            <div className="text-center text-gray-500 dark:text-gray-400 py-12">
-              The contact form is currently disabled.
             </div>
           </div>
         </motion.section>
