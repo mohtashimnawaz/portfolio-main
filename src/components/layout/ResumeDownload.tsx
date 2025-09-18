@@ -16,7 +16,7 @@ export default function ResumeDownload({ variant = 'primary', className = '' }: 
     // Create a temporary link element
     const link = document.createElement('a');
     link.href = resumeUrl;
-    link.download = 'Mohtashim_Nawaz_CV.pdf'; // Name of the downloaded file
+    link.download = 'Mohtashim_Nawaz_CV.pdf'; 
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
