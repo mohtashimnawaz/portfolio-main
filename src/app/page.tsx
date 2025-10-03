@@ -96,9 +96,9 @@ const volunteering = [
 const testimonials = [
   {
     id: 1,
-    name: "John Doe",
+    name: "Sahil Thakur",
     role: "CTO",
-    company: "Tech Corp",
+    company: "BlockseBlock",
     content: "Mohtashim is an exceptional developer who consistently delivers high-quality solutions.",
     rating: 5,
     image: "/testimonials/john-doe.jpg",
