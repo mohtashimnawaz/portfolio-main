@@ -75,10 +75,17 @@ const projects = [
 
 const experience = [
   {
+    title: "Software Engineer",
+    company: "SkyTrade",
+    period: "Oct 2025 - Present",
+    description: "Developing cutting-edge blockchain solutions and decentralized applications for trading platforms.",
+    technologies: ["Rust", "Solana", "TypeScript", "Smart Contracts"],
+  },
+  {
     title: "Intern",
     company: "BlockseBlock",
-    period: "Jun 2025 - Present",
-    description: "Working on blockchain development and smart contract implementation.",
+    period: "Jun 2025 - Jul 2025",
+    description: "Worked on blockchain development and smart contract implementation.",
     technologies: ["Rust", "Solana", "Smart Contracts"],
   }
 ];
