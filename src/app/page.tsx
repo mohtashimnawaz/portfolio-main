@@ -75,7 +75,7 @@ const projects = [
 
 const experience = [
   {
-    title: "Software Engineer",
+    title: "Full Stack Developer Intern",
     company: "SkyTrade",
     period: "Oct 2025 - Present",
     description: "Developing cutting-edge blockchain solutions and decentralized applications for trading platforms.",
