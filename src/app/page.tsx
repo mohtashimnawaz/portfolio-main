@@ -14,6 +14,30 @@ import ContactForm from '@/components/contact/ContactForm';
 
 // Sample data - replace with your actual data
 const projects = [
+    {
+    title: "Prediction",
+    description: "A predictive analytics platform leveraging machine learning and blockchain technology for accurate forecasting and data-driven insights.",
+    image: "/projects/prediction.png",
+    technologies: ["Machine Learning", "Blockchain", "Python", "TypeScript"],
+    githubUrl: "https://github.com/mohtashimnawaz/prediction",
+    liveUrl: "https://prediction-lac-two.vercel.app",
+  },
+  {
+    title: "Fractionalization",
+    description: "A decentralized fractionalization protocol enabling the tokenization and fractional ownership of real-world and digital assets.",
+    image: "/projects/fractionalization.png",
+    technologies: ["Solana", "Rust", "Smart Contracts"],
+    githubUrl: "https://github.com/mohtashimnawaz/fractionalization-mohtashim-dev-03",
+    liveUrl: "https://fractionalization-mohtashim-dev-03.vercel.app",
+  },
+  {
+    title: "RWA",
+    description: "Real World Assets (RWA) platform bridging traditional finance with blockchain, enabling tokenization and trading of real-world assets on-chain.",
+    image: "/projects/rwa.png",
+    technologies: ["Solana", "Rust", "DeFi"],
+    githubUrl: "https://github.com/mohtashimnawaz/rwa",
+    liveUrl: "https://rwa-sooty.vercel.app",
+  },
   {
     title: "Cross Chain Yield Aggregator",
     description: "A decentralized application that aggregates yields from various blockchain protocols, allowing users to find the best returns on their assets across different chains.",
@@ -36,20 +60,7 @@ const projects = [
     technologies: ["Solana", "JavaScript"],
     githubUrl: "https://github.com/mohtashimnawaz/Solana-flappy-game",
   },
-  {
-    title: "Decentralized P2P",
-    description: "A peer-to-peer decentralized application implementing secure communication and data transfer protocols.",
-    image: "/projects/decentralized-p2p.jpg",
-    technologies: ["TypeScript", "Node.js"],
-    githubUrl: "https://github.com/mohtashimnawaz/decentralizedp2p",
-  },
-  {
-    title: "Space Invaders in Rust",
-    description: "A modern implementation of the classic Space Invaders game using Rust, showcasing low-level game development and performance optimization.",
-    image: "/projects/space-invaders.jpg",
-    technologies: ["Rust", "Game Dev"],
-    githubUrl: "https://github.com/mohtashimnawaz/space_invadors",
-  },
+
   {
     title: "Decentralized Identity Verification",
     description: "A secure identity verification system built on blockchain technology, ensuring privacy and trust in digital identity management.",
@@ -63,13 +74,6 @@ const projects = [
     image: "/projects/custom-kernel.jpg",
     technologies: ["Rust", "Systems"],
     githubUrl: "https://github.com/mohtashimnawaz/my-kernel",
-  },
-  {
-    title: "DMS ICP",
-    description: "A decentralized management system on the Internet Computer Protocol (ICP), leveraging blockchain for secure and efficient data handling.",
-    image: "/projects/dms-icp.jpg",
-    technologies: ["Rust", "ICP"],
-    githubUrl: "https://github.com/mohtashimnawaz/dms_icp",
   }
 ];
 
