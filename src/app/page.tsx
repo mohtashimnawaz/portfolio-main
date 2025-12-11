@@ -17,7 +17,7 @@ const projects = [
     {
     title: "Prediction",
     description: "A predictive analytics platform leveraging machine learning and blockchain technology for accurate forecasting and data-driven insights.",
-    image: "/projects/prediction.png",
+    image: "/projects/rwa.png",
     technologies: ["Machine Learning", "Blockchain", "Python", "TypeScript"],
     githubUrl: "https://github.com/mohtashimnawaz/prediction",
     liveUrl: "https://prediction-lac-two.vercel.app",
@@ -25,7 +25,7 @@ const projects = [
   {
     title: "Fractionalization",
     description: "A decentralized fractionalization protocol enabling the tokenization and fractional ownership of real-world and digital assets.",
-    image: "/projects/fractionalization.png",
+    image: "/projects/prediction.png",
     technologies: ["Solana", "Rust", "Smart Contracts"],
     githubUrl: "https://github.com/mohtashimnawaz/fractionalization-mohtashim-dev-03",
     liveUrl: "https://fractionalization-mohtashim-dev-03.vercel.app",
@@ -33,7 +33,7 @@ const projects = [
   {
     title: "RWA",
     description: "Real World Assets (RWA) platform bridging traditional finance with blockchain, enabling tokenization and trading of real-world assets on-chain.",
-    image: "/projects/rwa.png",
+    image: "/projects/fractionalization.png",
     technologies: ["Solana", "Rust", "DeFi"],
     githubUrl: "https://github.com/mohtashimnawaz/rwa",
     liveUrl: "https://rwa-sooty.vercel.app",
