@@ -5,10 +5,31 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, Text, useCursor, Trail, Stars, Preload } from '@react-three/drei';
 import * as THREE from 'three';
 
+// Create circular particle texture
+function createCircleTexture() {
+  const canvas = document.createElement('canvas');
+  canvas.width = 64;
+  canvas.height = 64;
+  const ctx = canvas.getContext('2d');
+  if (ctx) {
+    const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+    gradient.addColorStop(0.5, 'rgba(255, 255, 255, 0.5)');
+    gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(32, 32, 32, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  return new THREE.CanvasTexture(canvas);
+}
+
 // Particle system for background effects
 function Particles({ count = 2000 }) {
   const mesh = useRef<THREE.Points>(null);
   const light = useRef<THREE.PointLight>(null);
+
+  const circleTexture = useMemo(() => createCircleTexture(), []);
 
   const particles = useMemo(() => {
     const temp = [];
@@ -50,19 +71,22 @@ function Particles({ count = 2000 }) {
           />
         </bufferGeometry>
         <pointsMaterial
-          size={0.1}
+          size={0.15}
+          map={circleTexture}
           color="#ffffff"
           transparent
-          opacity={0.6}
+          opacity={0.8}
           sizeAttenuation
+          depthWrite={false}
+          blending={THREE.AdditiveBlending}
         />
       </points>
     </>
   );
 }
 
-// Interactive cube with trail effect
-function TechCube({ position, text, color, onClick }: { 
+// Interactive sphere with trail effect
+function TechSphere({ position, text, color, onClick }: { 
   position: [number, number, number], 
   text: string, 
   color: string,
@@ -91,20 +115,15 @@ function TechCube({ position, text, color, onClick }: {
     
     if (hovered) {
       // Enhanced hover animation
-      meshRef.current.rotation.x = Math.sin(time * 3) * 0.3;
-      meshRef.current.rotation.z = Math.cos(time * 3) * 0.3;
       meshRef.current.scale.lerp(new THREE.Vector3(1.3, 1.3, 1.3), 0.1);
       setTrailVisible(true);
     } else {
-      meshRef.current.rotation.x = Math.sin(time * 0.5) * 0.1;
-      meshRef.current.rotation.z = 0;
       meshRef.current.scale.lerp(new THREE.Vector3(1, 1, 1), 0.1);
       setTrailVisible(false);
     }
 
     if (clicked) {
       // Enhanced click animation
-      meshRef.current.rotation.y += 0.2;
       meshRef.current.scale.lerp(new THREE.Vector3(1.6, 1.6, 1.6), 0.1);
       groupRef.current.position.y = Math.sin(time * 5) * 0.2;
     }
@@ -125,7 +144,7 @@ function TechCube({ position, text, color, onClick }: {
           attenuation={(t) => t * t}
         >
           <mesh ref={meshRef}>
-            <boxGeometry args={[2, 2, 2]} />
+            <sphereGeometry args={[1.2, 32, 32]} />
             <meshStandardMaterial 
               color={hovered ? '#ffffff' : color}
               metalness={0.5}
@@ -143,7 +162,7 @@ function TechCube({ position, text, color, onClick }: {
           onPointerOver={() => setHovered(true)}
           onPointerOut={() => setHovered(false)}
         >
-          <boxGeometry args={[2, 2, 2]} />
+          <sphereGeometry args={[1.2, 32, 32]} />
           <meshStandardMaterial 
             color={hovered ? '#ffffff' : color}
             metalness={0.5}
@@ -154,12 +173,12 @@ function TechCube({ position, text, color, onClick }: {
         </mesh>
       )}
       <Text
-        position={[0, 0, 1.1]}
-        fontSize={0.7}
+        position={[0, 0, 1.4]}
+        fontSize={0.6}
         color={hovered ? '#ffffff' : 'white'}
         anchorX="center"
         anchorY="middle"
-        outlineWidth={0.15}
+        outlineWidth={0.12}
         outlineColor="#000000"
       >
         {text}
@@ -228,19 +247,19 @@ function Scene() {
       <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
       <Particles count={2000} />
       
-      <TechCube 
+      <TechSphere 
         position={[-4, 0, 0]} 
         text="Rust" 
         color="#DEA584" 
         onClick={() => setActiveCube(activeCube === 'Rust' ? null : 'Rust')} 
       />
-      <TechCube 
+      <TechSphere 
         position={[0, 0, 0]} 
         text="Solana" 
         color="#14F195" 
         onClick={() => setActiveCube(activeCube === 'Solana' ? null : 'Solana')} 
       />
-      <TechCube 
+      <TechSphere 
         position={[4, 0, 0]} 
         text="Web3" 
         color="#9945FF" 
