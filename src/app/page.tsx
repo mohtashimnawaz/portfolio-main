@@ -39,19 +39,28 @@ const projects = [
     liveUrl: "https://rwa-sooty.vercel.app",
   },
   {
-    title: "Cross Chain Yield Aggregator",
+    title: "DECE AI",
     description: "A decentralized application that aggregates yields from various blockchain protocols, allowing users to find the best returns on their assets across different chains.",
-    image: "/projects/cross-chain-yield-aggregator.jpg",
+    image: "/projects/DAI.png",
     technologies: ["Solana", "Rust", "Next.js", "TypeScript"],
     githubUrl: "https://github.com/mohtashimnawaz/cross-chain-aggr-side",
+    liveUrl: "https://ai-marketplace-2imq.vercel.app"
   },
   {
     title: "DMS Solana",
     description: "A decentralized management system built on Solana blockchain, implementing secure and efficient data management solutions.",
-    image: "/projects/dms-solana.jpg",
+    image: "/projects/dms-solana.png",
     technologies: ["Solana", "Rust", "React"],
     githubUrl: "https://github.com/mohtashimnawaz/dmssolana",
-    liveUrl: "https://dms-solana.vercel.app",
+    liveUrl: "https://deadmansswitch.vercel.app",
+  },
+  {
+    title: "Solstream",
+    description: "A secure identity verification system built on blockchain technology, ensuring privacy and trust in digital identity management.",
+    image: "/projects/Solstream.png",
+    technologies: ["TypeScript", "Blockchain"],
+    githubUrl: "https://github.com/mohtashimnawaz/decentralized-identity-verification",
+    liveUrl: "https://solstream-7b709ka6d-mohtashim-nawazs-projects.vercel.app"
   },
   {
     title: "Solana Flappy Game",
@@ -61,13 +70,6 @@ const projects = [
     githubUrl: "https://github.com/mohtashimnawaz/Solana-flappy-game",
   },
 
-  {
-    title: "Decentralized Identity Verification",
-    description: "A secure identity verification system built on blockchain technology, ensuring privacy and trust in digital identity management.",
-    image: "/projects/identity-verification.jpg",
-    technologies: ["TypeScript", "Blockchain"],
-    githubUrl: "https://github.com/mohtashimnawaz/decentralized-identity-verification",
-  },
   {
     title: "Custom Kernel",
     description: "A custom operating system kernel implementation in Rust, demonstrating low-level systems programming and OS development.",
