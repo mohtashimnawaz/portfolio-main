@@ -2,10 +2,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  eslint: {
-    // Don't fail the build on ESLint warnings
-    ignoreDuringBuilds: true,
-  },
   images: {
     unoptimized: false,
     remotePatterns: [
@@ -23,5 +19,9 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
 };
+
+// Force turbopack root to repo directory to avoid root inference
+// @ts-ignore - NextConfig typings don't include turbopack root
+;(nextConfig as any).turbopack = { root: __dirname };
 
 export default nextConfig;
